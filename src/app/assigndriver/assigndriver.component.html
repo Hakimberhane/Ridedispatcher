@@ -1,0 +1,106 @@
+<!DOCTYPE html> 
+<html lang="en"> 
+   <head> 
+      <meta charset="UTF-8"> 
+      <meta name="viewport" 
+            content="width=device-width, initial-scale=1.0"> 
+      <link rel="stylesheet" href= 
+"https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"> 
+   </head> 
+   <body> 
+
+<div class="card text-center m-3">
+
+    <div class="card-body">
+
+<div class="row">
+                <div class="col d-flex flex-column flex-sm-row justify-content-between mb-3">
+                  <div class="text-center text-sm-left mb-2 mb-sm-0">
+                   
+                    <p class="mb-0">Route Id : {{routedata.routeno}}</p>
+                    <p class="mb-0">Departure : {{routedata.departureaddress}}</p>
+                    <p class="mb-0">Destination: {{routedata.destinationaddress}}</p>
+                  </div>
+                </div>
+
+                <div class="col text-right">
+
+                 <div class="text-center text-sm-right">
+                     <button class="btn btn-primary" type="button" (click)="goToRouteEditPage()">
+                       <i class="fa fa-edit"></i>
+                        <span>Edit</span>
+                      </button>
+                  </div>
+                  </div>
+
+                  </div>
+</div>
+</div>
+
+
+
+<!-- main app container -->
+    <h5 class="pl-3 pb-0">Assign a Driver</h5>
+
+
+        <div  style="padding:0px;margin:0px">
+           <div class="form-group" style="width:40%;margin-left:15px">
+                <input type="text" class="form-control" placeholder="Search Here">
+          </div>
+        </div>
+
+
+<div class="card text-center m-3">
+    <div class="card-body">
+
+    <table class="table table-bordered table-striped">
+  <caption>There are 2 drivers available now.</caption>
+    <thead>
+      <tr>
+        <th>Driver Id</th>
+        <th>Firstname</th>
+        <th>Lastname</th>
+        <th>Phone</th>
+        <th>Vehicle Id</th>
+        <th>Number of Seats</th>
+        <th>Assign a Driver</th>
+
+      </tr>
+    </thead>  
+    <tbody>
+      <tr *ngFor="let item of pageOfItems" class ="clickable" (click)="gotoprofilepage(item)">
+
+
+      <td style="color:blue">{{item.id}}</td>
+        <td>{{item.firstName}}</td>
+        <td>{{item.lastName}}</td>
+        <td>{{item.phone}}</td>
+        <td>V122</td>
+        <td>13</td>
+        <td>
+          <button #val1 type="button" id=i class="btn btn-primary dabutton" (click)="goToPickuptime(item)">
+            Assign
+          </button>
+       </td>
+        <td>
+          <button #val1 type="button" id=i class="btn btn-primary dabutton" [ngClass]="{'positive' : item.providerId === currentAssignedPrvId}" (click)="assign($event.target,item)">
+          {{item.providerId === currentAssignedPrvId? "Active":text}}
+          </button>
+       </td>
+
+      </tr>
+
+    </tbody>
+
+     <div class="card-footer pb-0 pt-3">
+        <jw-pagination [items]="items" (changePage)="onChangePage($event)"></jw-pagination>
+    </div>
+  </table>
+        
+    </div>
+    <div class="card-footer pb-0 pt-3">
+    </div>
+</div>
+
+</body>
+</html>

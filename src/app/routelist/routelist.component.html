@@ -1,0 +1,62 @@
+<!DOCTYPE html> 
+<html lang="en"> 
+   <head> 
+      <meta charset="UTF-8"> 
+      <meta name="viewport" 
+            content="width=device-width, initial-scale=1.0"> 
+      <link rel="stylesheet" href= 
+"https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"> 
+   </head> 
+   <body> 
+
+<!-- main app container -->
+    <h5 class="pl-3 pb-0">Routes List</h5>
+
+
+        <div class="container mx-auto " style="padding:0px;margin:0px">
+           <div class="form-group" style="width:40%;margin-left:15px">
+                <input type="text" class="form-control" placeholder="Search Here">
+          </div>
+        </div>
+
+
+<div class="card text-center m-3">
+    <div class="card-body">
+
+    <table class="table table-bordered table-striped">
+  <caption>There are routes available.</caption>
+    <thead>
+      <tr>
+        <th>Route ID</th>
+        <th>City</th>
+        <th>Departure</th>
+        <th>Detination</th>
+        <th>Distance</th>
+        <th>Number of Stops</th>
+        <th>Fare (Birr)</th>
+
+      </tr>
+    </thead>  
+    <tbody>
+      <tr *ngFor="let item of pageOfItems" class ="clickable" (click)="assigndriver(item)">
+
+        <td style="color:blue">{{item.id}}</td>
+        <td>{{item.city}}</td>
+        <td>{{item.departureaddress}}</td>
+        <td>{{item.destinationaddress}}</td>
+        <td>{{item.distance}}</td>
+        <td>{{item.numberofstops}}</td>
+        <td>{{item.fare}}</td>
+
+      </tr>
+    </tbody>
+  </table>
+         <div class="card-footer pb-0 pt-3">
+        <jw-pagination [items]="items" (changePage)="onChangePage($event)"></jw-pagination>
+    </div>
+    </div>
+   
+</div>
+
+</body>
+</html>

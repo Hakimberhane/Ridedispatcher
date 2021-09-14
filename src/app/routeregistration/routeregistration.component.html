@@ -1,0 +1,246 @@
+
+
+<!DOCTYPE html>
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<style>
+    /* Some custom styles to beautify this example */
+    .demo-content{
+        padding: 15px;
+        font-size: 18px;
+        background: #dbdfe5;
+        margin-bottom: 15px;
+    }
+    .demo-content.bg-alt{
+        background: #abb1b8;
+    }
+</style>
+</head>
+<body>
+ <h5 class="pl-3 pb-0">Route Registration</h5>
+
+<form [formGroup]="registerRouteForm" (ngSubmit)="SignUp()" class="form form-register form-group" novalidate="">
+
+<div class="card m-3">
+      <div class="card-body">      
+      
+          <div class="row">
+              <div class="col">
+                <div class="form-group">
+                  <label>Route No</label>
+                  <input class="form-control" type="text" formControlName="routeno" placeholder="Route No">
+                  
+                </div>
+              </div>
+              <div class="col">
+                <div class="form-group">
+                  <label>Sub Route No</label>
+                  <input class="form-control" type="text" formControlName="subrouteno" placeholder="Sub Route No">
+                  
+                </div>
+              </div>
+            </div>
+
+        <div class="row">
+              <div class="col">
+                <div class="form-group">
+                  <label>City</label>
+                  <input class="form-control" type="text" formControlName="city" placeholder="City">
+                  
+                </div>
+              </div>
+              <div class="col">
+                <div class="form-group">
+                  <label>Region</label>
+                  <input class="form-control" type="text" formControlName="region" placeholder="Region">
+                  
+                </div>
+              </div>
+            </div>
+
+               <div class="row">
+              <div class="col">
+                <div class="form-group">
+                  <label>Number of Stops</label>
+                  <input class="form-control" type="text" formControlName="numberofstops" placeholder="Number of Stops">
+                  
+                </div>
+              </div>
+              <div class="col">
+                <div class="form-group">
+                  <label>Fare</label>
+                  <input class="form-control" type="text" formControlName="fare" placeholder="Fare">
+                  
+                </div>
+              </div>
+            </div>
+
+       <div class="row">
+          <div class="col-6">
+            <div class="form-group">
+              <label>Distance</label>
+              <input class="form-control" type="text" placeholder="Distance" formControlName="distance">
+                 
+            </div>
+          </div>
+        </div>
+
+   </div>
+</div>
+
+  
+
+<!-- main app container -->
+
+
+<div class="card m-3">
+      <div class="card-body">    
+         <div class="row">
+          <div class="col-6">
+            <div class="form-group">
+              <label>Departure</label>
+              <input class="form-control" type="text" placeholder="Address" formControlName="departureaddress">
+                 
+            </div>
+          </div>
+         </div>
+
+          <div class="row">
+              <div class="col">
+                <div class="form-group">
+                  <label>Departure Longitude</label>
+                  <input class="form-control" type="text" formControlName="departurelongitude" placeholder="Longitude">
+                  
+                </div>
+              </div>
+              <div class="col">
+                <div class="form-group">
+                  <label>Departure Latitude</label>
+                  <input class="form-control" type="text" formControlName="departurelatitude" placeholder="Latitude">
+                  
+                </div>
+              </div>
+            </div>
+
+   </div>
+</div>
+
+ 
+<div class="card m-3">
+      <div class="card-body">    
+         <div class="row">
+          <div class="col-6">
+            <div class="form-group">
+              <label>Destination</label>
+              <input class="form-control" type="text" placeholder="Address" formControlName="destinationaddress">
+                
+            </div>
+          </div>
+         </div>
+
+          <div class="row">
+              <div class="col">
+                <div class="form-group">
+                  <label>Destination Longitude</label>
+                  <input class="form-control" type="text" formControlName="destinationlongitude" placeholder="Longitude">
+                  
+                </div>
+              </div>
+              <div class="col">
+                <div class="form-group">
+                  <label>Destination Latitude</label>
+                  <input class="form-control" type="text" formControlName="destinationlatitude" placeholder="Latitude">
+                   
+                </div>
+              </div>
+            </div>
+
+   </div>
+</div>
+
+   <div formArrayName="stops">
+ <ion-list *ngFor="let item of stops.controls; let i=index"  no-padding detail="false">
+
+ <ion-item lines="none" detail="false"> 
+
+
+<div class="card ml-3 mr-3 mt-3 mb-0" no-padding>
+
+      <div class="card-body">    
+     <div class="form-group"  [formGroupName]="i">
+
+         <div class="row">
+          <div class="col-6">
+            <div class="mb-3">
+              <label *ngIf ="i == 0"> {{i + 1}}st Stop</label>
+              <label *ngIf ="i == 1"> {{i + 1}}nd Stop</label>
+              <label *ngIf ="i == 2"> {{i + 1}}rd Stop</label>
+              <label *ngIf ="i > 2"> {{i + 1}}th Stop</label>
+              <input class="form-control"  formControlName="address"  type="text" placeholder="Address">
+                
+            </div>
+          </div>
+         </div>
+
+          <div class="row">
+              <div class="col">
+                <div class="form-group">
+                  <input class="form-control" formControlName="longitude" type="text"  placeholder="Longitude">
+                  
+                </div>
+              </div>
+              <div class="col">
+                <div class="form-group">
+                  <input class="form-control" formControlName="latitude" type="text"  placeholder="Latitude">
+                   
+                </div>
+              </div>
+          </div>
+
+</div>
+       </div>
+ </div>
+
+</ion-item>
+</ion-list>
+</div>
+
+<div class="card ml-3 mr-3 mt-1 mb-3" style="border:none">
+      <div class="card-body m-0 p-0">    
+   <div class="row">
+            <div class="col text-right">
+              <button name="button_1"  type="button" class="btn btn btn-secondary btn-sm mr-1" (click)='removeStop()'>Remove Stop</button>
+               <button name="button_1"  type="button" class="btn btn btn-secondary btn-sm" (click)='addStops()'>Add Stop</button>
+            </div>
+         </div>
+
+</div>
+</div>
+
+
+<div class="card m-3 p-0">
+      <div class="card-body">    
+           <div class="row">
+            <div class="col d-flex justify-content-end">
+              <button name="button_2" class="btn btn-primary" type="submit">Register</button>
+            </div>
+         </div>
+</div>
+</div>
+
+
+  </form>
+ 
+</body>
+</html>
+
+
+
+
+
+
+

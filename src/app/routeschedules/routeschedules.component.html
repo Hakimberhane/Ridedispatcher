@@ -1,0 +1,72 @@
+<!DOCTYPE html> 
+<html lang="en"> 
+   <head> 
+      <meta charset="UTF-8"> 
+      <meta name="viewport" 
+            content="width=device-width, initial-scale=1.0"> 
+      <link rel="stylesheet" href= 
+"https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"> 
+   </head> 
+   <body> 
+
+<!-- main app container -->
+    <h5 class="pl-3 pb-0">Scheduled Routes</h5>
+
+
+        <div style="padding:0px;margin-left:15px">
+           <div class="form-group" style="width:40%;margin-left:0px">
+                <input type="text" class="form-control" placeholder="Search Here">
+          </div>
+        </div>
+
+
+<div class="card text-center m-3">
+    <div class="card-body">
+
+    <table class="table table-bordered table-striped">
+  <caption>There are Routes available.</caption>
+    <thead>
+      <tr>
+
+        <th>Route ID </th>
+        <th>Driver ID</th>
+        <th>Departure</th>
+        <th>Destination</th>
+        <th>Schedules</th>
+        <th>Date Scheduled</th>
+
+        <th>Fare (Birr)</th>
+        <th>Cancel</th>
+      </tr>
+    </thead>  
+    <tbody>
+     <tr *ngFor="let item of pageOfItems" class ="clickable" >
+
+
+        <td style="color:blue" (click)="goToBookingPage(item)">{{item.routeId}}-{{item.subrouteno}}</td>
+        <td>{{item.driverId}}</td>
+        <td>{{item.departure}}</td> 
+        <td>{{item.destination}}</td>
+        <td style="color:blue">Hours</td>
+         <td style="color:black">{{item.dateBooked}}</td>
+
+        <td>{{item.fare}}</td>
+        <td>
+          <button type="button" class="btn btn-primary dabutton">
+              Cancel
+          </button>
+       </td>
+
+      </tr>
+    </tbody>
+    <div class="card-footer pb-0 pt-3">
+        <jw-pagination [items]="items" (changePage)="onChangePage($event)"></jw-pagination>
+    </div>
+  </table>
+        
+    </div>
+   
+</div>
+
+</body>
+</html>

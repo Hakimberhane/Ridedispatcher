@@ -1,0 +1,269 @@
+
+
+<!DOCTYPE html>
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<style>
+    /* Some custom styles to beautify this example */
+    .demo-content{
+        padding: 15px;
+        font-size: 18px;
+        background: #dbdfe5;
+        margin-bottom: 15px;
+    }
+    .demo-content.bg-alt{
+        background: #abb1b8;
+    }
+</style>
+</head>
+<body>
+
+ <h5 class="pl-3 pb-0">Driver Registration</h5>
+
+ <form [formGroup]="registerDriverForm" (ngSubmit)="SignUp()" class="form form-register form-group" novalidate="">
+
+
+<div class="card m-3">
+          <div class="card-body">
+
+              <div class="tab-content pt-0">
+                <div class="tab-pane active">
+
+
+                    <div class="row">
+                      <div class="col">
+                        <div class="row">
+                          <div class="col">
+                            <div class="form-group">
+                              <label>First Name</label>
+                              <input class="form-control" type="text" formControlName="firstName" placeholder="First Name">
+                               
+                            </div>
+                          </div>
+                          <div class="col">
+                            <div class="form-group">
+                              <label>Last Name</label>
+                              <input class="form-control" type="text" formControlName="lastName" placeholder="Last Name">
+                               
+                            </div>
+                          </div>
+                        </div>
+
+                          <div class="row">
+                            <div class="col-6">
+                              <div class="form-group">
+                                <label>Licence Id</label>
+                                <input class="form-control" type="text" placeholder="Licence Id" formControlName="licenceid">
+                                   
+                              </div>
+                            </div>
+                          </div>
+
+                        <div class="row">
+                          <div class="col">
+                            <div class="form-group">
+                              <label>Date of Birth</label>
+                               <div class="col-xs-12 col-12 col-md-4 form-group pl-0">
+                                 <input type="text" placeholder="MM/DD/YYYY" class="form-control" bsDatepickern formControlName="dob">
+                               </div>
+                              
+                            </div>
+                          </div>
+                        </div>
+
+                        <div class="row">
+                          <div class="col">
+                            <div class="form-group">
+                              <label>Gender</label>
+                                  <div class="custom-control custom-radio">
+                                    <input type="radio" class="custom-control-input" id="defaultUnchecked"  value="Male" formControlName="gender"/>
+                                    <label class="custom-control-label" for="defaultUnchecked">Male</label>
+                                  </div>
+
+                                  <!-- Default checked -->
+                                 
+                                  <div class="custom-control custom-radio">
+                                    <input type="radio" class="custom-control-input" id="defaultChecked" value="Femail" formControlName="gender"/>
+                                    <label class="custom-control-label" for="defaultChecked">Female</label>
+                                  </div>
+                                  
+                            </div>
+                          </div>
+                        </div>
+
+                        <div class="row">
+                          <div class="col">
+                            <div class="form-group">
+                              <label>Email</label>
+                              <input class="form-control" type="text" placeholder="user@example.com" formControlName="email">
+                                 
+                            </div>
+                          </div>
+                        </div>
+                         <div class="row">
+                          <div class="col">
+                            <div class="form-group">
+                              <label>Phone</label>
+                              <div class="input-group">
+                                  <div class="input-group-prepend">
+                                    <div class="input-group-text">+251</div>
+                                  </div>
+                              <input class="form-control" type="text" placeholder="Phone number" formControlName="phone">
+                              </div>
+                                                      
+                            </div>
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="col">
+                            <div class="form-group">
+                              <label>Address</label>
+                              <input class="form-control" type="text" placeholder="Address" formControlName="address" >
+                             
+                            </div>
+                          </div>
+                        </div>
+
+                         <div class="row">
+                          <div class="col">
+                            <div class="form-group">
+                              <label>City</label>
+                              <input class="form-control" type="text" formControlName="city" placeholder="City">
+                                                        
+                            </div>
+                          </div>
+                          <div class="col">
+                            <div class="form-group">
+                              <label>Region</label>
+                              <input class="form-control" type="text" formControlName="region" placeholder="Region">
+                              
+                            </div>
+                          </div>
+                           <div class="col">
+                            <div class="form-group">
+                              <label>Country</label>
+                              <input class="form-control" type="text" formControlName="country" placeholder="Ethiopia" value="Ethiopia">
+                              
+                            </div>
+                          </div>
+                        </div>   
+                        
+                          <div class="row">
+                          <div class="col">
+                            <div class="form-group">
+                              <label>Available</label>
+                                  <div class="custom-control custom-radio">
+                                    <input type="radio" class="custom-control-input" id="defaultUnchecked"  value="Yes" formControlName="availability"/>
+                                    <label class="custom-control-label" for="defaultUnchecked">Yes</label>
+                                  </div>
+
+                                  <!-- Default checked -->
+                                 
+                                  <div class="custom-control custom-radio">
+                                    <input type="radio" class="custom-control-input" id="defaultChecked" value="No" formControlName="availability"/>
+                                    <label class="custom-control-label" for="defaultChecked">No</label>
+                                  </div>
+                                  
+                            </div>
+                          </div>
+                        </div>                         
+                      </div>
+                    </div>
+
+                      
+
+
+                </div>
+              </div>
+
+          </div>
+        </div>
+
+
+
+<!-- main app container -->
+    <h5 class="pl-3 pb-0">Car Registration</h5>
+
+
+<div class="card m-3">
+      <div class="card-body">    
+         <div class="row">
+          <div class="col-6">
+            <div class="form-group">
+              <label>Brand</label>
+              <input class="form-control" type="text" placeholder="Brand" formControlName="brand">
+                 
+            </div>
+          </div>
+         </div>
+
+          <div class="row">
+              <div class="col">
+                <div class="form-group">
+                  <label>Car type</label>
+                  <input class="form-control" type="text" formControlName="carType" placeholder="Car Type">
+                  
+                </div>
+              </div>
+              <div class="col">
+                <div class="form-group">
+                  <label>Plate Number</label>
+                  <input class="form-control" type="text" formControlName="platenumber" placeholder="Plate Number">
+                  
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col">
+                <div class="form-group">
+                  <label>Owner First Name</label>
+                  <input class="form-control" type="text" formControlName="ownerfirstName" placeholder="First Name">
+                  
+                </div>
+              </div>
+              <div class="col">
+                <div class="form-group">
+                  <label>Owner Last Name</label>
+                  <input class="form-control" type="text" formControlName="ownerlastName" placeholder="Last Name">
+                  
+                </div>
+              </div>
+            </div>
+
+
+            <div class="row">
+              <div class="col">
+                <div class="form-group">
+                  <label>Number of Seats</label>
+                  <input class="form-control" type="text" formControlName="numberofseats" placeholder="Number of Seats">
+                  
+                </div>
+              </div>
+              <div class="col">
+                <div class="form-group">
+                  <label>Manufactured Year</label>
+                  <input class="form-control" type="text" formControlName="manufacturedyear" placeholder="Manufactured Year">
+                  
+                </div>
+              </div>
+            </div>
+
+     </div>
+   </div>
+
+         <div class="row">
+          <div class="col d-flex justify-content-end">
+            <button class="btn btn-primary" type="submit">Register</button>
+          </div>
+        </div>
+
+
+    </form>
+
+</body>
+</html>

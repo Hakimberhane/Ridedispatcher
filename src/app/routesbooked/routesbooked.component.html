@@ -1,0 +1,118 @@
+<!DOCTYPE html> 
+<html lang="en"> 
+   <head> 
+      <meta charset="UTF-8"> 
+      <meta name="viewport" 
+            content="width=device-width, initial-scale=1.0"> 
+      <link rel="stylesheet" href= 
+"https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"> 
+   </head> 
+   <body style="margin-top:50px"> 
+
+<!-- main app container -->
+
+ <h5 class="pl-3 pb-0">Select Time</h5>
+
+
+     <div style="margin-bottom:20px; padding-bottom:5px;border-bottom: 1px solid lightgray">
+
+			<button *ngIf="routeData.mondayHrs.myarraylist" style="margin-right:10px;margin-left:15px; 
+			font-size:15px;height:25px" (click)="showTimeAndBookingTable('Mon')" [ngStyle]="{'color':buttonClicked == 'Mon' ? 'orange' : '#5acbff' }" >Monday</button>
+			<button *ngIf="routeData.tuesdayHrs.myarraylist" style="margin-right:10px;margin-left:15px;
+		    font-size:15px;height:25px" (click)="showTimeAndBookingTable('Tue')" [ngStyle]="{'color':buttonClicked == 'Tue' ? 'orange' : '#5acbff' }" >Tuesday</button>
+			<button *ngIf="routeData.wednesdayHrs.myarraylist" style="margin-right:10px;margin-left:15px; 
+			font-size:15px;height:25px" (click)="showTimeAndBookingTable('Wed')" [ngStyle]="{'color':buttonClicked == 'Wed' ? 'orange' : '#5acbff' }" >Wednesday</button>
+			<button *ngIf="routeData.thursdayHrs.myarraylist" style="margin-right:10px;margin-left:15px;
+			font-size:15px;height:25px" (click)="showTimeAndBookingTable('Thu')" [ngStyle]="{'color':buttonClicked == 'Thu' ? 'orange' : '#5acbff' }" >Thursday</button>
+			<button *ngIf="routeData.fridayHrs.myarraylist" style="margin-right:10px;margin-left:15px; 
+			font-size:15px;height:25px" (click)="showTimeAndBookingTable('Fri')" [ngStyle]="{'color':buttonClicked == 'Fri' ? 'orange' : '#5acbff' }" >Friday</button>
+			<button *ngIf="routeData.satdayHrs.myarraylist" style="margin-right:10px;margin-left:15px; 
+			font-size:15px;height:25px" (click)="showTimeAndBookingTable('Sat')" [ngStyle]="{'color':buttonClicked == 'Sat' ? 'orange' : '#5acbff' }" >Saturday</button>
+
+    </div>
+   
+
+   
+
+        <div class="container mx-auto " style="padding:0px;margin:0px;margin-top:20px">
+           <div class="form-group" style="width:100%;margin-left:15px">
+
+
+           <div class="row">
+              <div class="col=1" style="margin-right:22px">
+                   <h5 style="color:black;font-size:15px;height:25px">Morning:</h5>
+	            </div>
+                <div class="row">
+	                 <div class="col"  *ngFor="let item of morninghoursArray" (click)="showbookingtable(item)" >
+                     <h5 style="color:blue;font-size:15px;height:25px">{{item}}</h5>
+	                 </div>
+                </div>
+
+           </div>
+
+            <div class="row">
+               <div class="col=1" style="margin-right:5px">
+                   <h5 style="color:black;font-size:15px;height:25px">Afternoon:</h5>
+	             </div>
+                 <div class="row">
+	                 <div class="col"  *ngFor="let item of afternoonghoursArray" (click)="showbookingtable(item)" >
+                      <h5 style="color:blue;font-size:15px;height:25px">{{item}}</h5>
+	                 </div>
+	               </div>
+             </div>
+        
+        </div>
+    </div>
+               <h5 class="pl-3 pb-0">{{pickedRoute}}</h5>
+               <h5 class="pl-3 pb-0" style="color:orange;font-size:15px"> {{pickedTimeDate}}</h5>
+
+               <h5 class="pl-3 pb-0" style="font-size:13px"> {{departure}} ---> {{destination}}</h5>
+               <h5 class="pl-3 pb-0" style="color:green;font-size:15px">{{pickedTime}}</h5>
+
+
+<div class="card text-center m-3">
+    <div class="card-body">
+
+    <table class="table table-bordered table-striped">
+  <caption>There are routes available.</caption>
+    <thead>
+      <tr>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Phone</th>
+        <th>Number of Seats Booked</th>
+        <th>Booked Date</th>
+        <th>Pick up</th>
+        <th>Drop off</th>
+        <th>Fare</th>
+        <th>Total Fare</th>
+
+      </tr>
+    </thead>  
+    <tbody>
+      <tr>
+
+        <td style="color:blue">Hakim</td>
+        <td style="color:blue">Jffer</td>
+
+        <td>0940290240</td>
+        <td>3</td>
+        <td></td>
+        <td>Bole Int</td>
+        <td style="color:blue">Merkato</td>
+        <td>40</td>
+        <td>40</td>
+
+
+      </tr>
+    </tbody>
+  </table>
+         <div class="card-footer pb-0 pt-3">
+        <jw-pagination [items]="items" (changePage)="onChangePage($event)"></jw-pagination>
+    </div>
+    </div>
+   
+</div>
+
+</body>
+</html>

@@ -1,0 +1,68 @@
+ 
+  <div class="col">
+    <div class="row">
+      <div class="col mb-3">
+        <div class="card">
+          <div class="card-body">
+            <div class="e-profile">
+              <div class="row">
+                <div class="col-12 col-sm-auto mb-3">
+                  <div class="mx-auto " style="width: 140px;">
+                    <div class="d-flex justify-content-center align-items-center rounded" style="height: 140px; background-color: rgb(233, 236, 239);">
+                      <span style="color: rgb(166, 168, 170); font: bold 8pt Arial;">140x140</span>
+                    </div>
+                    <div style="color:green;font-size:14px;font-weight:600;" class="text-center">
+                    <p class="mb-0">Available</p>
+
+                    </div>
+                  </div>
+                </div>
+                <div class="col d-flex flex-column flex-sm-row justify-content-between mb-3">
+                  <div class="text-center text-sm-left mb-2 mb-sm-0">
+                    <h4 class="pt-sm-2 pb-1 mb-0 text-nowrap">{{driverprofile.firstName}} {{driverprofile.lastName}} ({{driverprofile.gender}})</h4>
+                    <i class="fa fa-check" style="color:green !important;">Verified</i>
+                    <p class="mb-0">Address:{{driverprofile.address}}</p>
+                    <p class="mb-0">{{driverprofile.city}},{{driverprofile.region}}</p>
+
+                    <p class="mb-0">Birth date : {{driverprofile.dob}} ({{driverprofile.age}})</p>
+                    <p class="mb-0">{{driverprofile.email}}</p>
+                    <p class="mb-0">Phone: {{driverprofile.phone}}</p>
+                    <p class="mb-0">Licence id : {{driverprofile.licenceid}} </p>
+
+                  </div>
+                  <div class="text-center text-sm-right">
+                     <button class="btn btn-primary" type="button" (click)="goToDriverEditPage()">
+                       <i class="fa fa-edit"></i>
+                        <span>Edit</span>
+                      </button>
+                  </div>
+                </div>
+
+
+              </div>
+
+               <br>
+
+
+              <ul class="nav nav-tabs bg-light">
+
+                <li class="nav-item"><a [routerLink]="['admassignaprovider']" routerLinkActive="Classes" [routerLinkActiveOptions]="{exact: true}"  skipLocationChange href="" class="active nav-link">Assign a Provider</a></li>
+                <li class="nav-item"><a [routerLink]="['assignments']" routerLinkActive="Assignment" [routerLinkActiveOptions]="{exact: true}"  skipLocationChange href="" class="nav-link">History</a></li>
+                <li class="nav-item"><a [routerLink]="['classes']" routerLinkActive="Resources" [routerLinkActiveOptions]="{exact: true}" skipLocationChange class="nav-link">Appointment</a></li>
+                <li class="nav-item"><a [routerLink]="['admassignaprovider']" routerLinkActive="Events" [routerLinkActiveOptions]="{exact: true}" skipLocationChange class=" nav-link">Prescription</a></li>
+                <li class="nav-item"><a [routerLink]="['classes']" routerLinkActive="Results" [routerLinkActiveOptions]="{exact: true}" skipLocationChange class=" nav-link">Results</a></li>
+
+              </ul>
+              <div class="tab-content pt-3">
+                <div class="tab-pane active">
+                 <router-outlet></router-outlet>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+

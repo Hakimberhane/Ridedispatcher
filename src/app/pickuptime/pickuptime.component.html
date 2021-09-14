@@ -1,0 +1,109 @@
+<!DOCTYPE html> 
+<html lang="en"> 
+   <head> 
+      <meta charset="UTF-8"> 
+      <meta name="viewport" 
+            content="width=device-width, initial-scale=1.0"> 
+      <link rel="stylesheet" href= 
+"https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"> 
+   </head> 
+   <body> 
+
+<div class="card text-center m-3">
+
+    <div class="card-body">
+
+<div class="row">
+                <div class="col d-flex flex-column flex-sm-row justify-content-between mb-3">
+                  <div class="text-center text-sm-left mb-2 mb-sm-0">
+                   
+                    <p class="mb-0">Driver Id : {{driverId}}</p>
+                    <p class="mb-0">Departure : {{routeData.departureaddress}}</p>
+                    <p class="mb-0">Destination: {{routeData.destinationaddress}}</p>
+                  </div>
+                </div>
+
+               
+
+                  </div>
+</div>
+</div>
+
+
+
+<!-- main app container -->
+    <h5 class="pl-3 pb-0">Select Time</h5>
+
+
+
+
+<div class="card text-center m-3">
+    <div class="card-body">
+       <div class="row">
+
+          <div class="col" *ngFor="let item of dayswithdate">
+				<div class="row"> <h5 style="margin-left:10px;font-size:15px"> {{item.day}} </h5></div>
+				<div class="row"> <h2 style="font-size:13px"> {{item.date}} </h2></div>
+				<div class="row">
+				<button #first  size="small"  shape="round" fill="outline" (click)="addTime($event.target,'02:00 AM',item)" 
+				style="color:green;margin-bottom:2px;width:75px;font-size:13px;height:25px;background:#f0f0f0"> 02:00 AM 
+				</button>
+				</div>
+				<div class="row">
+				<button #first  size="small"  shape="round" fill="outline" (click)="addTime($event.target,'03:00 AM',item)" 
+				style="color:green;margin-bottom:2px;width:75px;font-size:13px;height:25px;background:#f0f0f0"> 03:00 AM 
+				</button>
+				</div>
+				<div class="row">
+				<button #first  size="small"  shape="round" fill="outline" (click)="addTime($event.target,'04:00 AM',item)" 
+				style="color:green;margin-bottom:2px;width:75px;font-size:13px;height:25px;background:#f0f0f0"> 04:00 AM 
+				</button>
+				</div>
+				<div class="row">
+				<button #first  size="small"  shape="round" fill="outline" (click)="addTime($event.target,'09:00 PM',item)"  
+				style="color:green;margin-bottom:2px;width:75px;font-size:13px;height:25px;background:#f0f0f0"> 09:00 PM
+				</button>
+				</div>
+				<div class="row">
+				<button #first  size="small"  shape="round" fill="outline" (click)="addTime($event.target,'10:00 PM',item)" 
+				style="color:green;margin-bottom:2px;width:75px;font-size:13px;height:25px;background:#f0f0f0"> 10:00 PM 
+				</button>
+				</div>				
+				<div class="row">
+				<button #first  size="small"  shape="round" fill="outline" (click)="addTime($event.target,'11:00 PM',item)"  
+				style="color:green;margin-bottom:2px;width:75px;font-size:13px;height:25px;background:#f0f0f0"> 11:00 PM 
+				</button>
+				</div>				
+				<div class="row">
+				<button #first  size="small"  shape="round" fill="outline" (click)="addTime($event.target,'12:00 PM',item)" 
+				style="color:green;margin-bottom:2px;width:75px;font-size:13px;height:25px;background:#f0f0f0"> 12:00 PM 
+				</button>
+				</div>				
+				<div class="row">
+				<button #first  size="small"  shape="round" fill="outline" (click)="addTime($event.target,'01:00 PM',item)" 
+				style="color:green;margin-bottom:2px;width:75px;font-size:13px;height:25px;background:#f0f0f0"> 01:00 PM 
+				</button>
+				</div>		
+
+		   </div>
+
+
+
+
+	</div>
+
+
+
+	<div class="row">
+          <div class="col d-flex " style="margin-top:10px;margin-left:0px;padding:0px">
+            <button class="btn btn-primary" type="submit" (click)="assingDriver()">Assign</button>
+          </div>
+        </div>
+
+</div>
+</div>
+
+
+
+</body>
+</html>

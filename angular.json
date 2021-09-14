@@ -119,6 +119,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "Ridedispatcher"
+    }
+  },
+  "defaultProject": "Ridedispatcher",
+  "cli": {
+    "analytics": false
+  }
 }
